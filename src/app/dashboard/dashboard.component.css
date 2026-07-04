@@ -1,0 +1,103 @@
+/* File: src/app/dashboard/dashboard.component.css */
+
+.app-toolbar {
+  background: var(--ink) !important;
+  color: #fff;
+}
+
+.toolbar-brand {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* File: src/app/dashboard/dashboard.component.css — add this at the top */
+
+:host {
+  display: block;
+  background: #FAF5FF;
+  min-height: 100vh;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.page-header {
+  padding: 36px 40px 10px 40px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: var(--ink);
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  margin: 6px 0 0 0;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 40px 40px 40px;
+}
+
+.stat-card {
+  flex: 1 1 220px;
+  background: var(--card);
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 2px 10px rgba(27,42,74,0.06);
+  transition: transform 0.15s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-card mat-icon {
+  color: var(--accent);
+  font-size: 28px;
+  height: 100px;
+  width: 28px;
+  margin-bottom: 14px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.stat-value {
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.stat-label {
+  font-size: 20px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.p{
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 25px;
+  font-size: 25px;
+}

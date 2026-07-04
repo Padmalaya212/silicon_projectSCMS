@@ -1,0 +1,10 @@
+<!-- File: src/app/shared/confirm-dialog/confirm-dialog.component.html -->
+
+<h2 mat-dialog-title>Confirm Delete</h2>
+<div mat-dialog-content>
+  <p>{{ data.message }}</p>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="warn" (click)="onConfirm()">Delete</button>
+</div>

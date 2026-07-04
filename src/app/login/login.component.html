@@ -1,0 +1,49 @@
+<!-- File: src/app/login/login.component.html -->
+
+<div class="home-wrapper">
+  <div class="brand-panel ledger-lines">
+    <div class="brand-content">
+      <div class="brand-mark">SCMS</div>
+      <h1 class="display-font brand-title">Student Course<br>Management System</h1>
+      <p class="brand-tagline">One register for every student, course and record — kept simple.</p>
+
+      <div class="brand-stats">
+        <div class="brand-stat">
+          <span class="stat-num display-font">01</span>
+          <span class="stat-label">Sign in to your register</span>
+        </div>
+        <div class="brand-stat">
+          <span class="stat-num display-font">02</span>
+          <span class="stat-label">View live enrollment stats</span>
+        </div>
+        <div class="brand-stat">
+          <span class="stat-num display-font">03</span>
+          <span class="stat-label">Manage every student record</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-panel">
+    <mat-card class="login-card">
+      <h2 class="display-font login-title">Welcome back</h2>
+      <p class="login-subtitle">Sign in to open the register</p>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="username" name="username">
+        <mat-icon matSuffix>person_outline</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password" name="password" (keyup.enter)="onLogin()">
+        <mat-icon matSuffix>lock_outline</mat-icon>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="login-btn" (click)="onLogin()" [disabled]="loading">
+        {{ loading ? 'Signing in...' : 'Sign In' }}
+      </button>
+    </mat-card>
+  </div>
+</div>

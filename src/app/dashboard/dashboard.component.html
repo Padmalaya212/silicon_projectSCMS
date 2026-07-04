@@ -1,0 +1,51 @@
+<!-- File: src/app/dashboard/dashboard.component.html -->
+
+<mat-toolbar class="app-toolbar">
+  <span class="toolbar-brand display-font">SCMS</span>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="goToStudents()">Manage Students</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+</mat-toolbar>
+
+<div class="page-header">
+  <h1 class="display-font">Register Overview</h1>
+  <p class="page-subtitle">Live snapshot of your student roll</p>
+</div>
+
+<!-- File: src/app/dashboard/dashboard.component.html — replace the 4 stat-card divs with this -->
+
+<div class="dashboard-container" *ngIf="!loading">
+  <div class="stat-card" style="--accent: #D97706">
+    <mat-icon>groups</mat-icon>
+    <span class="stat-value display-font">{{ stats.totalStudents }}</span>
+    <span class="stat-label">Total Students</span>
+  </div>
+
+  <div class="stat-card" style="--accent: #2563EB">
+    <mat-icon>menu_book</mat-icon>
+    <span class="stat-value display-font">{{ stats.totalCourses }}</span>
+    <span class="stat-label">Total Courses</span>
+  </div>
+
+  <div class="stat-card" style="--accent: #059669">
+    <mat-icon>male</mat-icon>
+    <span class="stat-value display-font">{{ stats.totalMale }}</span>
+    <span class="stat-label">Male Students</span>
+  </div>
+
+  <div class="stat-card" style="--accent: #DB2777">
+    <mat-icon>female</mat-icon>
+    <span class="stat-value display-font">{{ stats.totalFemale }}</span>
+    <span class="stat-label">Female Students</span>
+  </div>
+</div>
+<div class="loading-container" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div><br><br>
+
+<p class="p">................................................You can manage the Student records from the "Profile" section..................................................</p>

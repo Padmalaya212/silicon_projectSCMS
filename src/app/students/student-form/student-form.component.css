@@ -1,0 +1,17 @@
+/* File: src/app/students/student-form/student-form.component.css */
+
+.full-width {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.gender-row {
+  margin-bottom: 15px;
+}
+
+.gender-label {
+  display: block;
+  font-size: 12px;
+  color: rgba(0,0,0,0.6);
+  margin-bottom: 5px;
+}

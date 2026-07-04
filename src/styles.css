@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+/* File: src/styles.css (replace entire content) */
+
+:root {
+  /* File: src/styles.css — alternative, more vivid purple */
+
+--ink: #5B21B6;
+--ink-light: #7C3AED;
+  --gold: #E4A93C;
+  --gold-dark: #C68A28;
+  --parchment: #FBF8F2;
+  --card: #FFFFFF;
+  --text: #2B3245;
+  --text-muted: #6B7280;
+  --emerald: #2F855A;
+  --clay: #C1440E;
+  --border: #E5E1D8;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--parchment);
+  color: var(--text);
+}
+
+h1, h2, h3, .display-font {
+  font-family: var(--font-display);
+}
+
+/* Ledger rule texture — signature motif, used on home page */
+.ledger-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 39px,
+    rgba(255,255,255,0.06) 40px
+  );
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
