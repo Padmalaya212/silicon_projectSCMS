@@ -6,12 +6,21 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AppShellComponent } from './layout/app-shell/app-shell.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'students', component: StudentListComponent, canActivate: [AuthGuard] }
+  {
+    path: '',
+    component: AppShellComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'students', component: StudentListComponent }
+    ]
+  }
 ];
 
 @NgModule({

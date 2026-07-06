@@ -47,7 +47,7 @@ export class StudentService {
 }
 
   deleteStudent(id: number): Observable<string> {
-    return this.http.delete(`${this.baseUrl}/deleteStudent/${id}`, { responseType: 'text' });
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
   searchByName(name: string): Observable<Student[]> {

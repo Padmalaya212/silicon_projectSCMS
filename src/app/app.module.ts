@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { StudentFormComponent } from './students/student-form/student-form.component';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
+import { AppShellComponent } from './layout/app-shell/app-shell.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.c
     DashboardComponent,
     StudentListComponent,
     StudentFormComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    AppShellComponent
   ],
   imports: [
     BrowserModule,

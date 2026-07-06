@@ -1,13 +1,9 @@
-<!-- File: src/app/students/student-list/student-list.component.html -->
+<!-- File: src/app/students/student-list/student-list.component.html — replace entire content -->
 
-
-
-<mat-toolbar class="app-toolbar" style="background: var(--ink) !important; color: #fff;">
-  <button mat-icon-button (click)="goToDashboard()">
-    <mat-icon>arrow_back</mat-icon>
-  </button>
-  <span class="display-font">Manage Students</span>
-</mat-toolbar>
+<div class="page-header">
+  <h1 class="display-font">Students</h1>
+  <p class="page-subtitle">Manage every student record in one place</p>
+</div>
 
 <div class="container">
   <div class="toolbar-row">
@@ -22,28 +18,31 @@
       </button>
     </mat-form-field>
 
-    <!-- File: src/app/students/student-list/student-list.component.html — find the Add Student button and update -->
-
-<button mat-raised-button style="background: #4CAF50; color: #fff;" (click)="openAddDialog()">
-  <mat-icon>add</mat-icon> Add Student
-</button>
+    <button class="add-btn" (click)="openAddDialog()">
+      <mat-icon>add</mat-icon> Add Student
+    </button>
   </div>
 
   <div class="loading-container" *ngIf="loading">
     <mat-spinner></mat-spinner>
   </div>
 
-  <div class="table-container mat-elevation-z2" *ngIf="!loading">
+  <div class="table-container" *ngIf="!loading">
     <table mat-table [dataSource]="dataSource" matSort>
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
-        <td mat-cell *matCellDef="let s">{{ s.id }}</td>
+        <td mat-cell *matCellDef="let s" class="mono">{{ s.id }}</td>
       </ng-container>
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-        <td mat-cell *matCellDef="let s">{{ s.name }}</td>
+        <td mat-cell *matCellDef="let s">
+          <div class="name-cell">
+            <span class="avatar">{{ s.name.charAt(0) }}</span>
+            {{ s.name }}
+          </div>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="email">
@@ -53,7 +52,7 @@
 
       <ng-container matColumnDef="mobileNumber">
         <th mat-header-cell *matHeaderCellDef>Mobile</th>
-        <td mat-cell *matCellDef="let s">{{ s.mobileNumber }}</td>
+        <td mat-cell *matCellDef="let s" class="mono">{{ s.mobileNumber }}</td>
       </ng-container>
 
       <ng-container matColumnDef="course">
@@ -62,31 +61,34 @@
       </ng-container>
 
       <ng-container matColumnDef="address">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+        <th mat-header-cell *matHeaderCellDef>Address</th>
         <td mat-cell *matCellDef="let s">{{ s.address }}</td>
       </ng-container>
 
 
-      
 
       <ng-container matColumnDef="gender">
         <th mat-header-cell *matHeaderCellDef>Gender</th>
-        <td mat-cell *matCellDef="let s">{{ s.gender }}</td>
+        <td mat-cell *matCellDef="let s">
+          <span class="gender-pill" [class.male]="s.gender === 'Male'" [class.female]="s.gender === 'Female'">
+            {{ s.gender }}
+          </span>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="dob">
         <th mat-header-cell *matHeaderCellDef>DOB</th>
-        <td mat-cell *matCellDef="let s">{{ s.dob }}</td>
+        <td mat-cell *matCellDef="let s" class="mono">{{ s.dob }}</td>
       </ng-container>
 
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Actions</th>
         <td mat-cell *matCellDef="let s">
-          <button mat-icon-button color="primary" (click)="openEditDialog(s)">
-            <mat-icon>edit</mat-icon>
+          <button mat-icon-button (click)="openEditDialog(s)">
+            <mat-icon style="color: var(--primary);">edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn" (click)="deleteStudent(s)">
-            <mat-icon>delete</mat-icon>
+          <button mat-icon-button (click)="deleteStudent(s)">
+            <mat-icon style="color: var(--rose);">delete</mat-icon>
           </button>
         </td>
       </ng-container>

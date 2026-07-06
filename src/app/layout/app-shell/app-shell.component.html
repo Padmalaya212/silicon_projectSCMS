@@ -1,0 +1,38 @@
+<!-- File: src/app/layout/app-shell/app-shell.component.html -->
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-mark">S</span>
+      <span class="logo-text display-font">SCMS</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </a>
+      <a routerLink="/students" routerLinkActive="active" class="nav-item">
+        <mat-icon>groups</mat-icon>
+        <span>Students</span>
+      </a>
+    </nav>
+
+    <button class="logout-btn" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar">
+      <span class="live-badge">
+        <span class="pulse-dot"></span> Live
+      </span>
+    </header>
+
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
